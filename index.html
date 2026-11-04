@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d28">
+  <meta name="description" content="A little trip to the moon, starring Linh and David. Volume 1.">
+  <title>Adventures of Linh &amp; David · Vol. 1</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85'%3E%F0%9F%8C%99%3C/text%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="cover.jpg">
+  <style>
+    :root{color-scheme:dark;--gold:#ffe6a9;--muted:#acb5d4;--edge:rgba(255,255,255,.16)}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080d28;color:#fff;font-family:ui-rounded,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{background:radial-gradient(ellipse at 50% 6%,#273066 0%,transparent 62%),linear-gradient(160deg,#0b1031,#07091a 88%);min-height:100dvh;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.64;background-image:radial-gradient(circle,#fff 1px,transparent 1.3px),radial-gradient(circle,#d6c3ff .7px,transparent 1px),radial-gradient(circle,#ffe3a5 1px,transparent 1.5px);background-position:11px 8px,61px 49px,35px 81px;background-size:103px 127px,151px 173px,223px 197px}
+    .app{position:relative;z-index:1;min-height:100dvh;display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top) + 16px) 12px calc(env(safe-area-inset-bottom) + 18px)}
+    header{width:min(100%,1160px);display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 auto 16px}
+    .brand{font-size:12px;letter-spacing:.16em;font-weight:800;color:var(--gold);text-transform:uppercase;white-space:nowrap}.brand span{color:#fff;font-weight:400;letter-spacing:.07em}
+    .mode{background:#161f43bb;color:#e9e7ff;border:1px solid var(--edge);padding:10px 13px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;min-height:39px}
+    .reader{width:100%;flex:1;display:flex;align-items:center;justify-content:center;gap:8px;max-width:1250px;min-height:0}
+    .stage{width:min(100%,1060px);min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;perspective:1600px;cursor:pointer}
+    .paper{overflow:hidden;isolation:isolate;position:relative;width:100%;aspect-ratio:3/2;border-radius:14px;border:1px solid #f4d6ac73;box-shadow:0 25px 85px #020516bb,0 0 30px #e9a9ff19;background:linear-gradient(140deg,#232f6b,#101632);user-select:none;-webkit-user-select:none}
+    .paper img{display:block;max-width:none;user-select:none;-webkit-user-drag:none;pointer-events:none}.full{width:100%;height:100%;object-fit:contain}
+    .paper.panel{aspect-ratio:2.25/1}.paper.panel img{position:absolute;width:200%;height:auto;top:0;left:0}
+    .paper.animate.next{animation:next .35s cubic-bezier(.22,.8,.24,1)}.paper.animate.prev{animation:prev .35s cubic-bezier(.22,.8,.24,1)}
+    @keyframes next{from{opacity:.5;transform:translateX(18px) rotateY(-8deg) scale(.98)}to{opacity:1;transform:none}}@keyframes prev{from{opacity:.5;transform:translateX(-18px) rotateY(8deg) scale(.98)}to{opacity:1;transform:none}}
+    .nav{appearance:none;border:1px solid var(--edge);background:#1b2349c7;backdrop-filter:blur(10px);color:#fff;width:45px;height:58px;flex-shrink:0;border-radius:14px;font-size:26px;line-height:1;cursor:pointer;transition:background .2s,transform .2s}.nav:active,.mode:active,.cta:active{transform:scale(.96)}.nav:disabled{opacity:.26;cursor:default}
+    .detail{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;padding:0 3px;color:var(--muted);font-size:12px;min-height:19px}.detail b{color:#f4ddaa;font-weight:700}
+    .tools{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;max-width:800px;margin:16px auto 0}
+    .dots{display:flex;align-items:center;justify-content:center;gap:9px}.dot{width:6px;height:6px;border-radius:50%;background:#8791b0;opacity:.4;transition:all .2s}.dot.active{background:#ffdc8d;width:21px;border-radius:99px;opacity:1}
+    .caption{text-align:center;font-size:12px;color:#b4bbd6;letter-spacing:.04em;margin:0}
+    .cover-overlay{position:absolute;inset:auto 0 0;background:linear-gradient(transparent,#030716bb);height:27%;display:flex;align-items:flex-end;justify-content:center;padding:0 0 4%;pointer-events:none}
+    .cta{color:#13152e;border:0;background:linear-gradient(120deg,#fff0bf,#ffce7f);border-radius:999px;font-size:clamp(13px,2vw,19px);font-weight:800;padding:12px 24px;box-shadow:0 4px 24px #ffd78c6b;cursor:pointer;pointer-events:auto}
+    .ending{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;width:100%;aspect-ratio:3/2;gap:12px;padding:24px;background:radial-gradient(ellipse at center,#272b64,#10152f 72%)}.ending .moon{font-size:clamp(46px,9vw,100px)}.ending h1{font-family:Georgia,serif;font-style:italic;font-size:clamp(26px,5vw,62px);font-weight:400;color:var(--gold);margin:0}.ending p{font-size:clamp(13px,2vw,20px);color:#dddaf4;margin:0}.ending .restart{margin-top:14px}
+    .missing{position:absolute;inset:0;background:#161a38;display:none;align-items:center;justify-content:center;color:#e9c5ca;text-align:center;padding:30px}
+    @media(max-width:650px){.app{padding-left:7px;padding-right:7px}header{padding:0 6px}.reader{gap:2px}.nav{width:30px;height:48px;border-radius:9px;font-size:22px;border-color:#ffffff17;background:#20295397}.paper{border-radius:10px}.detail{font-size:11px}.brand{font-size:10px;letter-spacing:.08em}.brand span{letter-spacing:0}.mode{padding:9px 11px}.cover-overlay{height:33%}.cta{padding:9px 15px}.stage{gap:9px}.paper.panel{border-radius:9px}.caption{padding:0 15px}}
+    @media(prefers-reduced-motion:reduce){.paper.animate.next,.paper.animate.prev{animation:none}*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header><div class="brand">✦ Linh &amp; David <span> · A little adventure</span></div><button id="mode" class="mode" type="button" aria-label="Toggle panel or full page reading">Panel view</button></header>
+    <section class="reader" aria-label="Interactive comic book reader">
+      <button class="nav" id="previous" type="button" aria-label="Previous page">‹</button>
+      <div class="stage" id="stage" title="Tap to turn the page">
+        <div class="paper" id="paper"><img class="full" id="comic" src="cover.jpg" alt="Adventures of Linh & David, Volume 1, cover"><div id="overlay" class="cover-overlay"><button type="button" class="cta" id="begin">Begin our adventure ✦</button></div><div class="missing" id="missing">The comic image hasn't been uploaded yet.</div></div>
+        <div class="detail"><span id="status">The beginning of our adventure 🌙</span><span id="number"><b>Cover</b> · 1 / 5</span></div>
+      </div>
+      <button class="nav" id="next" type="button" aria-label="Next page">›</button>
+    </section>
+    <footer class="tools"><div class="dots" id="dots" aria-label="Reading progress"></div><p class="caption">Made with love ✨ &nbsp;·&nbsp; Swipe to turn pages</p></footer>
+  </main>
+  <script>
+    'use strict';
+    const pages=[{src:'cover.jpg',alt:'Comic cover: Adventures of Linh and David, Volume 1'},{src:'page-01.jpg',alt:'Linh and David start their journey to the moon'},{src:'page-02.jpg',alt:'Linh and David fly through space and land on the moon'},{src:'page-03.jpg',alt:'Linh and David meet a magical moon bunny'},{src:'page-04.jpg',alt:'Linh and David bring their new friend home'}];
+    const descriptions=['The beginning of our adventure 🌙','Chapter 1 · To the moon! 🚀','Chapter 2 · An unexpected landing 💫','Chapter 3 · A little moon friend 🐰','Chapter 4 · Home is where you are ❤️'];
+    const $=id=>document.getElementById(id),paper=$('paper'),img=$('comic'),overlay=$('overlay'),dots=$('dots');
+    let page=0,fragment=0,panels=matchMedia('(max-width:650px)').matches,ended=false;
+    function render(dir='next'){
+      const isPanel=panels&&page>0&&!ended;
+      paper.className='paper'+(isPanel?' panel':'')+(dir?' animate '+dir:'');
+      void paper.offsetWidth;
+      img.style.display=ended?'none':'block';
+      paper.querySelector('.ending')?.remove();
+      overlay.style.display=page===0&&!ended?'flex':'none';
+      $('missing').style.display='none';
+      if(ended){const end=document.createElement('div');end.className='ending';end.innerHTML='<div class="moon">🌙</div><h1>To be continued...</h1><p>Until our next adventure. ♡</p><button class="cta restart" type="button" id="restart">Read it again ↻</button>';paper.append(end);$('restart').addEventListener('click',e=>{e.stopPropagation();page=0;fragment=0;ended=false;render('prev')})}
+      else{
+        const data=pages[page];if(img.getAttribute('src')!==data.src)img.src=data.src;
+        img.alt=data.alt;img.className=isPanel?'':'full';
+        if(isPanel){let col=fragment%2,row=Math.floor(fragment/2);img.style.transform=`translate(${-col*50}%,${-row*(100/3)}%)`}
+        else img.style.transform='none';
+      }
+      $('status').textContent=ended?'The end. For now. 💛':descriptions[page];
+      $('number').innerHTML=ended?'<b>The End</b>':`<b>${page===0?'Cover':'Page '+page}</b> · ${page+1} / 5${isPanel?' · Panel '+(fragment+1)+'/6':''}`;
+      $('previous').disabled=page===0&&!ended;
+      $('next').disabled=ended;
+      $('mode').textContent=panels?'Full page view':'Panel view';
+      dots.replaceChildren();for(let i=0;i<5;i++){let d=document.createElement('span');d.className='dot'+(i===page?' active':'');dots.append(d)}
+      const soon=pages[Math.min(page+1,4)].src;if(page<4){let preload=new Image();preload.src=soon}
+    }
+    function go(delta){
+      if(ended){if(delta<0){ended=false;page=4;fragment=panels?5:0;render('prev')}return}
+      if(delta>0){if(panels&&page>0&&fragment<5){fragment++;render('next');return}if(page<4){page++;fragment=0;render('next')}else{ended=true;render('next')}}
+      else{if(panels&&page>0&&fragment>0){fragment--;render('prev');return}if(page>0){page--;fragment=panels&&page>0?5:0;render('prev')}}
+    }
+    $('next').onclick=e=>{e.stopPropagation();go(1)};$('previous').onclick=e=>{e.stopPropagation();go(-1)};
+    $('begin').onclick=e=>{e.stopPropagation();go(1)};
+    $('mode').onclick=e=>{e.stopPropagation();panels=!panels;fragment=0;render('')};
+    $('stage').onclick=e=>{if(e.target.closest('button'))return;go(1)};
+    document.addEventListener('keydown',e=>{if(['ArrowRight',' ','Enter'].includes(e.key)){e.preventDefault();go(1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+    let startX=0,startY=0;paper.addEventListener('touchstart',e=>{if(e.touches.length!==1)return;startX=e.touches[0].clientX;startY=e.touches[0].clientY},{passive:true});paper.addEventListener('touchend',e=>{if(e.changedTouches.length!==1)return;const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.2){go(dx<0?1:-1);paper.dataset.swiped='1';setTimeout(()=>delete paper.dataset.swiped,300)}},{passive:true});
+    img.addEventListener('error',()=>{$('missing').style.display='flex'});
+    img.addEventListener('load',()=>{$('missing').style.display='none'});
+    render('');
+  </script>
+</body>
+</html>
